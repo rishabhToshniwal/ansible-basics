@@ -3,7 +3,7 @@
   tasks:
      - name: Create file
        shell: echo "temp file" > tempfile.txt
-     - name: Ensure 'temp' is present in tempfile.txt
+     - name: Ensure 'temp' is present in tempfile.txt 
        lineinfile:
          path: tempfile.txt
          line: 'temp'
