@@ -1,0 +1,12 @@
+- name: Generate host-IP file
+  hosts: localhost
+  vars:
+    ip_list:
+      - 192.168.1.10
+      - 192.168.1.11
+      - 192.168.1.12
+  tasks:
+    - name: Create file from template
+      template:
+        src: hostmap.j2
+        dest: /tmp/hostmap.txt
