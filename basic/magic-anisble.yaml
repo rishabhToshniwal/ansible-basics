@@ -1,0 +1,8 @@
+---
+- name: Get Architecture
+  hosts: targets
+  tasks:
+     - name: Print System Architecture
+       debug:
+         var: ansible_distribution # magic variables https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_vars_facts.html
+       when:  ansible_os_family == "RedHat"
