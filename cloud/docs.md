@@ -5,7 +5,7 @@
      or
 2. You can configure profile using aws configure (cli)
      or
-3. You can configure profile (\~/.aws/config_<file>) as under if running from ec2 instance, it will assume the role provided your instance profile(IAM associated with ec2) has assume role capabilities and the target role trusts IAM assocaited with ec2
+3. You can configure profile (\~/.aws/config_filename) as under if running from ec2 instance, it will assume the role provided your instance profile(IAM associated with ec2) has assume role capabilities and the target role trusts IAM assocaited with ec2
                   <pre>
                      \[profile dev\]
                      role_arn=arn:aws:iam::accid:role/role-name
@@ -14,5 +14,5 @@
                      metadata_service_timeout=5
                      metadata_service_num_attempts=5
                   </pre>
-   export AWS_CONFIG_FILE=~/.aws/config_<file>
+   export AWS_CONFIG_FILE=~/.aws/config_filename
    export AWS_DEFAULT_PROFILE=dev
