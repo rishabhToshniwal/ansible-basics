@@ -1,0 +1,14 @@
+---
+- name: List all S3 buckets
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Get S3 bucket info
+      aws_s3_bucket_info:
+      register: result
+
+    - name: Show bucket list
+      debug:
+        msg: "{{ result.buckets }}"
