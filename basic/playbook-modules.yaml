@@ -1,0 +1,10 @@
+- name: Get Architecture
+  hosts: targets
+  tasks:
+     - name: Create file
+       shell: echo "temp file" > tempfile.txt
+     - name: Ensure 'temp' is present in tempfile.txt
+       lineinfile:
+         path: tempfile.txt
+         line: 'temp'
+         state: present
