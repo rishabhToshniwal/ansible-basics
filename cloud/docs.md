@@ -1,4 +1,6 @@
-For accessing the AWS Account, you need to
+### Ref https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html
+
+### For accessing the AWS Account, you need to
 1. export AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
      or
 2. You can configure profile using aws configure (cli)
@@ -10,5 +12,6 @@ For accessing the AWS Account, you need to
                      credential_source=Ec2InstanceMetadata
                      metadata_service_timeout=5
                      metadata_service_num_attempts=5
+   
    export AWS_CONFIG_FILE=~/.aws/config_<file>
    export AWS_DEFAULT_PROFILE=dev
