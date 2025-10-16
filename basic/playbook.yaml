@@ -1,10 +1,14 @@
 ---
-- name: Get Architecture
-  hosts: targets
-  tasks:
+  - name: Get Architecture
+    hosts: targets
+    tasks:
      - name: Print System Architecture
        debug:
          var: '{{ansible_facts.architecture}}'
+
+  - name: Files
+    hosts: targets
+    tasks:
      - name: Create file
        shell: echo "temp file" > tempfile.txt
      - name: Show where the file was created
@@ -13,3 +17,12 @@
      - name: Print File Details
        debug:
          var: file_info
+     - name: Read file contents
+       shell: cat tempfile.txt
+       register: file_lines
+
+     - name: Print each line
+       debug:
+        var: item
+       with_items: "{{ file_lines.stdout_lines }}"
+
