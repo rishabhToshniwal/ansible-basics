@@ -1,0 +1,15 @@
+---
+- name: Get Architecture
+  hosts: targets
+  tasks:
+     - name: Print System Architecture
+       debug:
+         var: '{{ansible_facts.architecture}}'
+     - name: Create file
+       shell: echo "temp file" > tempfile.txt
+     - name: Show where the file was created
+       command: ls -l tempfile.txt
+       register: file_info
+     - name: Print File Details
+       debug:
+         var: file_info
